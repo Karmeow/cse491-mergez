@@ -8,10 +8,12 @@ def sum_sq_diff(series):
 
     total_diff = 0.
 
-    series = [ (item-avg)**2 for item in series ]
-    total_diff = sum(series)
+    for item in series:
+        diff = item - avg
+        diff = diff * diff
+        total_diff += diff
 
-    return total_diff / float(len(series))
+    return total_diff
 
 def stddev(series):
     "Calculate the standard deviation of the given series."
